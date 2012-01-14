@@ -1257,6 +1257,8 @@ describe "UserAgent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.3 (KHTML, like
   it "should return '535.3' as its webkit version" do
     @useragent.webkit.version.should == "535.3"
   end
+
+  it { @useragent.should be_webkit }
 end
 
 describe "UserAgent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7 360EE" do
@@ -1275,4 +1277,6 @@ describe "UserAgent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.7 (KHTML, like
   it "should return '535.7' as its webkit version" do
     @useragent.webkit.version.should == "535.7"
   end
+
+  it { @useragent.should be_webkit }
 end
