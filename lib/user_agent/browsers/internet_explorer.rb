@@ -9,7 +9,17 @@ class UserAgent
       end
 
       def browser
-        "Internet Explorer"
+        if detect_comment('360SE')
+          '360SE'
+        elsif detect_comment('360EE')
+          '360EE'
+        elsif detect_comment('SE 2.X MetaSr 1.0')
+          'Sogou'
+        elsif detect_comment('Maxthon/')
+          'Maxthon'
+        else
+          "Internet Explorer"
+        end
       end
 
       def version

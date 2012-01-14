@@ -12,6 +12,10 @@ class UserAgent
       def browser
         if os =~ /Android/
           'Android'
+        elsif detect_product('360EE')
+          '360EE'
+        elsif detect_product('Maxthon')
+          'Maxthon'
         elsif detect_product('Chrome')
           'Chrome'
         elsif platform == 'webOS' || platform == 'BlackBerry'  || platform == 'Symbian'

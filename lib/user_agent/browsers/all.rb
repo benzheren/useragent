@@ -75,6 +75,10 @@ class UserAgent
         def detect_product(product)
           detect { |useragent| useragent.product.to_s.downcase == product.to_s.downcase }
         end
+
+        def detect_comment(comment)
+          application.comment.detect{|c| c[comment]}
+        end
     end
   end
 end
