@@ -1240,3 +1240,39 @@ describe "UserAgent: SonyEricssonU8i/R2EA; Mozilla/5.0 (SymbianOS/9.4; U; Series
 
   it { @useragent.should be_mobile }
 end
+
+describe "UserAgent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.3 (KHTML, like Gecko) Maxthon/3.3.3.1000 Chrome/16.0.883.0 Safari/535.3" do
+  before do
+   @useragent = UserAgent.parse("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.3 (KHTML, like Gecko) Maxthon/3.3.3.1000 Chrome/16.0.883.0 Safari/535.3")
+  end
+
+  it "should return 'Maxthon' as its browser" do
+    @useragent.browser.should == "Maxthon"
+  end
+  
+  it "should return '535.3' as its build" do
+    @useragent.build.should == "535.3"
+  end
+
+  it "should return '535.3' as its webkit version" do
+    @useragent.webkit.version.should == "535.3"
+  end
+end
+
+describe "UserAgent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7 360EE" do
+  before do
+    @useragent = UserAgent.parse("Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/16.0.912.63 Safari/535.7 360EE")
+  end
+
+  it "should return '360EE' as its browser" do
+    @useragent.browser.should == "360EE"
+  end
+  
+  it "should return '535.7' as its build" do
+    @useragent.build.should == "535.7"
+  end
+  
+  it "should return '535.7' as its webkit version" do
+    @useragent.webkit.version.should == "535.7"
+  end
+end
